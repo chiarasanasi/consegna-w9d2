@@ -4,8 +4,8 @@ const Welcome = function () {
   return (
     <>
       <Container>
-        <Alert variant="warning" className="my-3">
-          <Alert.Heading className="d-flex align-items-center">
+        <Alert variant="warning" className="my-3 text-center">
+          <Alert.Heading className="d-flex align-items-center justify-content-center">
             Benvenuto in BookStore!
             <img
               src="/assets/bookstore.svg"
@@ -16,7 +16,7 @@ const Welcome = function () {
           </Alert.Heading>
           <p>
             Questa è la tua occasione per diventare una persona acculturata
-            scegliendo un fantastico libro da leggere. Seguo il tuo instinto,
+            scegliendo un fantastico libro da leggere. Segui il tuo instinto,
             ciao!
           </p>
           <hr />

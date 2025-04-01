@@ -16,10 +16,12 @@ function App() {
       <header>
         <MyNav />
       </header>
-      <main className="flex-grow-1">
+      <main className="flex-grow-1 bg-secondary">
         <Welcome />
         <Container className="d-flex flex-column">
-          <h2 className="d-flex justify-content-center mb-3 mt-3">FANTASY</h2>
+          <h2 className="d-flex justify-content-center mb-3 mt-3 text-warning">
+            FANTASY
+          </h2>
           <AllTheBooks category={fantasy} />
           <h2 className="d-flex justify-content-center mb-3 mt-3">HISTORY</h2>
           <AllTheBooks category={history} />
