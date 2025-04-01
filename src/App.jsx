@@ -1,34 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "bootstrap/dist/css/bootstrap.min.css"
+import MyNav from "./components/MyNav"
+import MyFooter from "./components/MyFooter"
+import Welcome from "./components/Welcome"
+import AllTheBooks from "./components/AllTheBooks"
+import fantasy from "./data/fantasy.json"
+import history from "./data/history.json"
+import horror from "./data/horror.json"
+import romance from "./data/romance.json"
+import scifi from "./data/scifi.json"
+import { Container } from "react-bootstrap"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="d-flex flex-column min-vh-100">
+      <header>
+        <MyNav />
+      </header>
+      <main className="flex-grow-1">
+        <Welcome />
+        <Container className="d-flex flex-column">
+          <h2 className="d-flex justify-content-center mb-3 mt-3">FANTASY</h2>
+          <AllTheBooks category={fantasy} />
+          <h2 className="d-flex justify-content-center mb-3 mt-3">HISTORY</h2>
+          <AllTheBooks category={history} />
+          <h2 className="d-flex justify-content-center mb-3 mt-3">HORROR</h2>
+          <AllTheBooks category={horror} />
+          <h2 className="d-flex justify-content-center mb-3 mt-3">ROMANCE</h2>
+          <AllTheBooks category={romance} />
+          <h2 className="d-flex justify-content-center mb-3 mt-3">SCIFI</h2>
+          <AllTheBooks category={scifi} />
+        </Container>
+      </main>
+      <footer>
+        <MyFooter />
+      </footer>
+    </div>
   )
 }
 
